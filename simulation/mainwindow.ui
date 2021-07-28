@@ -19,6 +19,10 @@
   <property name="font">
    <font>
     <family>阿里巴巴普惠体 R</family>
+    <pointsize>10</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
     <stylestrategy>PreferAntialias</stylestrategy>
    </font>
   </property>
@@ -31,7 +35,13 @@
    </iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
+   <string notr="true">#MainWindow{
+	
+	font: 10pt &quot;阿里巴巴普惠体 R&quot;;
+	background-color: rgb(255, 255, 255);
+}
+
+QPushButton {
 	
 	font: 10pt &quot;阿里巴巴普惠体 R&quot;;
 	color: white;
@@ -40,7 +50,7 @@
 	background: #065279;
 }
 QPushButton:hover{
-	background-color:#009999;
+	background-color:#177cb0;
 	color: white;
 }
 QPushButton:pressed{
@@ -56,24 +66,20 @@ QCheckBox {
 	background: grey;
 }
 
-#MainWindow{
-	
-	background-color: rgb(255, 255, 255);
-}
-
 QCheckBox:enabled {
 	background: #065279;
 }
+
+
+
+
+
 QGroupBox {
 border-color: rgb(198, 198, 198);
 border-width: 1px;
 border-style: solid;
 border-radius: 10px;
-}
-
-
-
-</string>
+}</string>
   </property>
   <property name="iconSize">
    <size>
@@ -128,6 +134,12 @@ border-radius: 10px;
           <width>350</width>
           <height>700</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>阿里巴巴普惠体 R</family>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="title">
          <string>快捷控制面板</string>
@@ -187,7 +199,7 @@ border-radius: 10px;
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>35</height>
+                 <height>0</height>
                 </size>
                </property>
                <property name="toolTip">
@@ -203,7 +215,7 @@ border-radius: 10px;
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>35</height>
+                 <height>0</height>
                 </size>
                </property>
                <property name="text">
@@ -216,7 +228,7 @@ border-radius: 10px;
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>35</height>
+                 <height>0</height>
                 </size>
                </property>
                <property name="text">
@@ -229,7 +241,7 @@ border-radius: 10px;
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>35</height>
+                 <height>0</height>
                 </size>
                </property>
                <property name="text">
@@ -781,6 +793,7 @@ border-radius: 10px;
         <property name="font">
          <font>
           <family>阿里巴巴普惠体 R</family>
+          <pointsize>10</pointsize>
           <stylestrategy>PreferAntialias</stylestrategy>
          </font>
         </property>
@@ -799,22 +812,48 @@ border-radius: 10px;
      <x>0</x>
      <y>0</y>
      <width>1300</width>
-     <height>26</height>
+     <height>29</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>阿里巴巴普惠体 R</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
    <widget class="QMenu" name="fileMenu">
+    <property name="font">
+     <font>
+      <family>阿里巴巴普惠体 R</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
     <property name="title">
      <string>文件</string>
     </property>
     <addaction name="FMnewWin"/>
     <addaction name="separator"/>
     <addaction name="FMopenFile"/>
+    <addaction name="FMpasteFile"/>
     <addaction name="FMsaveFile"/>
     <addaction name="FMSaveAs"/>
     <addaction name="separator"/>
     <addaction name="FMeditor"/>
    </widget>
    <widget class="QMenu" name="pannelMenu">
+    <property name="font">
+     <font>
+      <family>阿里巴巴普惠体 R</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
     <property name="title">
      <string>面板</string>
     </property>
@@ -823,6 +862,13 @@ border-radius: 10px;
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="optionMenu">
+    <property name="font">
+     <font>
+      <family>阿里巴巴普惠体 R</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
     <property name="title">
      <string>选项</string>
     </property>
@@ -843,6 +889,13 @@ border-radius: 10px;
     <addaction name="OMcomponentAccess"/>
    </widget>
    <widget class="QMenu" name="aboutMenu">
+    <property name="font">
+     <font>
+      <family>阿里巴巴普惠体 R</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
     <property name="title">
      <string>关于</string>
     </property>
@@ -1015,7 +1068,7 @@ border-radius: 10px;
   </action>
   <action name="AMversion">
    <property name="text">
-    <string>版本:1.1.1</string>
+    <string>版本:1.1.3</string>
    </property>
   </action>
   <action name="FMSaveAs">
@@ -1026,6 +1079,16 @@ border-radius: 10px;
    </property>
    <property name="text">
     <string>另存文件</string>
+   </property>
+  </action>
+  <action name="FMpasteFile">
+   <property name="icon">
+    <iconset>
+     <normalon>:/menuIcon/wendang_1.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>复制代码进入</string>
    </property>
   </action>
  </widget>

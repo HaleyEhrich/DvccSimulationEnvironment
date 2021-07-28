@@ -82,14 +82,78 @@ void MainWindow::on_FMnewWin_triggered()
     newWindow->show();
 }
 
+//复制内容识别
+void MainWindow::on_FMpasteFile_triggered()
+{
+
+    QString text = QInputDialog::getMultiLineText(this,tr("输入微程序代码"),tr("黏贴于此处"));
+    if (text.isEmpty())
+    {
+        QMessageBox::information(this,"","empty");
+    }
+    else
+    {
+        QMessageBox::information(this,"","Unempty");
+        string line;
+        QStringList list=text.split("\n");
+        for(int i=0;i<list.length();++i){
+            line=list[i].toStdString();
+            if (line[0] == '$') {
+                int address = dataHTransD(line[2], line[3]);
+                if (line[1] == 'P') {//程序区
+                    this->data->ram[address][0] = line[4];
+                    this->data->ram[address][1] = line[5];
+                }
+                else if (line[1] == 'M') {
+                    string trans="0000";
+                    dataHTransB(line[8], trans);
+                    this->data->rom[address][24] = trans[0];
+                    this->data->rom[address][23] = trans[1];
+                    this->data->rom[address][22] = trans[2];
+                    this->data->rom[address][21] = trans[3];
+                    dataHTransB(line[9], trans);
+                    this->data-> rom[address][20] = trans[0];
+                    this->data->rom[address][19] = trans[1];
+                    this->data->rom[address][18] = trans[2];
+                    this->data->rom[address][17] = trans[3];
+                    dataHTransB(line[6], trans);
+                    this->data->rom[address][16] = trans[0];
+                    this->data->rom[address][15] = trans[1];
+                    this->data->rom[address][14] = trans[2];
+                    this->data->rom[address][13] = trans[3];
+                    dataHTransB(line[7], trans);
+                    this->data->rom[address][12] = trans[0];
+                    this->data->rom[address][11] = trans[1];
+                    this->data->rom[address][10] = trans[2];
+                    this->data->rom[address][9] = trans[3];
+                    dataHTransB(line[4], trans);
+                    this->data->rom[address][8] = trans[0];
+                    this->data->rom[address][7] = trans[1];
+                    this->data->rom[address][6] = trans[2];
+                    this->data->rom[address][5] = trans[3];
+                    dataHTransB(line[5], trans);
+                    this->data->rom[address][4] = trans[0];
+                    this->data->rom[address][3] = trans[1];
+                    this->data->rom[address][2] = trans[2];
+                    this->data->rom[address][1] = trans[3];
+                }
+
+        }
+
+        }
+    }
+}
+
 //打开文件读取到内存内
 void MainWindow::on_FMopenFile_triggered()
 {
+
     QString filePath=QFileDialog::getOpenFileName(this,
                 tr("打开文件"),
                 QDir::currentPath(),
                 "txt(*.txt);;other(*.*)");
-    statusBar()->showMessage("程序文件:"+filePath,2);
+    statusBar()->showMessage("程序文件:"+filePath,1000);
+    filePath.replace("/","\\");
     this->proFile=new QFile(filePath);
     this->proFile->open(QIODevice::ReadWrite | QIODevice::Text);
     retryOpen:
@@ -216,6 +280,7 @@ void MainWindow::on_FMsaveFile_triggered()
     statusBar()->showMessage("文件保存成功",2);
 }
 
+//另存文件
 void MainWindow::on_FMSaveAs_triggered()
 {
     QString filePath=QFileDialog::getExistingDirectory(this,
@@ -428,11 +493,6 @@ void MainWindow::on_microControlAcess_triggered()
 void MainWindow::on_AMinstructions_triggered()
 {
     //todo：使用说明
-}
-
-//打开网页
-void MainWindow::openURL(QString url){
-    QDesktopServices::openUrl(QUrl(url));
 }
 
 //制作信息
@@ -1640,14 +1700,15 @@ void MainWindow::on_runInMicroCmd_clicked()
     //微地址2进制显示
     //"<div> S3 S2 S1 S0 M Cn WE B<sub>1</sub> B<sub>0</sub>  A   B    C    U5~U0 "
 
-    QString a=QString::number(_s3)+"   "+QString::number(_s2)+"   "+QString::number(_s1)+"   "+QString::number(_s0)+"   "\
-                +QString::number(_m)+"   "+QString::number(_cn)+"   "+QString::number(_we)+"   "\
-                +QString::number(_B1)+"   "+QString::number(_B0)+"   "\
-                +QString::number(_a3)+"   "+QString::number(_a2)+"   "+QString::number(_a1)+"   "\
-                +QString::number(_b3)+"   "+QString::number(_b2)+"   "+QString::number(_b1)+"   "\
-                +QString::number(_c3)+"   "+QString::number(_c2)+"   "+QString::number(_c1)+"   "\
+    dataDTransH(this->data->mroAddress,this->data->tempString);
+    QString a="<strong>$M"+QString::fromStdString(this->data->tempString)+"</strong> | "+QString::number(_s3)+"   "+QString::number(_s2)+"   "+QString::number(_s1)+"   "+QString::number(_s0)+"   "\
+                +QString::number(_m)+"   "+QString::number(_cn)+"   "+QString::number(_we)+" | "\
+                +QString::number(_B1)+"   "+QString::number(_B0)+"  | "\
+                +QString::number(_a3)+"   "+QString::number(_a2)+"   "+QString::number(_a1)+"  | "\
+                +QString::number(_b3)+"   "+QString::number(_b2)+"   "+QString::number(_b1)+"  | "\
+                +QString::number(_c3)+"   "+QString::number(_c2)+"   "+QString::number(_c1)+"  | "\
                 +QString::number(_u6)+"   " +QString::number(_u5)+"   " +QString::number(_u4)+"   "\
-                +QString::number(_u3)+"   " +QString::number(_u2)+"   " +QString::number(_u1)+"   \t";
+                +QString::number(_u3)+"   " +QString::number(_u2)+"   " +QString::number(_u1)+" | ";
 
     //信号处理
     this->signalPro(this->data);
@@ -1845,12 +1906,43 @@ void MainWindow::on_runInMicroCmd_clicked()
     this->statusBarLable->setTextFormat(Qt::RichText);
 }
 
+//避免文件不存在
+bool MainWindow::isFileLoad(){
+    for(int i=0;i<100;i++){
+        for(int j=1;j<24;++j){
+            if(this->data->rom[i][j])
+                return true;
+        }
+    }
+    return false;
+}
+
 //单步指令运行，在微地址变为预设的开始停止
 void MainWindow::on_runInCmd_clicked()
 {
-    while(this->data->mroAddress!=this->data->startMroAd){
-        on_runInMicroCmd_clicked();
+    if(this->isFileLoad()==false){
+        switch (QMessageBox::information(this,tr("警告"),tr("微程序文件不存在，继续运行会造成不可预知的错误，是否继续运行？"),QMessageBox::Ok,QMessageBox::Cancel)){
+        case QMessageBox::Ok:{
+
+            break;
+        }
+        case QMessageBox::Cancel:{
+            return;
+        }
+        }
+
     }
+    do{
+        on_runInMicroCmd_clicked();
+        if(this->data->pc==256){
+            QMessageBox::warning(this,tr("RAM访问越界"),tr("RAM内存文件已达末尾"));
+            break;
+        }else{
+            QEventLoop eventloop;
+            QTimer::singleShot(1000, &eventloop, SLOT(quit()));
+            eventloop.exec();
+        }
+    }while(this->data->mroAddress!=this->data->startMroAd);
 }
 
 //手动运行，可直接复用单步运行函数
@@ -2078,3 +2170,6 @@ void MainWindow::on_functionInput_inputRejected()
     this->data->tempString=_s3+_s2+_s1+_s0+_m+_cn;
     this->ui->functionInput->setText(QString::fromStdString(this->data->tempString));
 }
+
+
+

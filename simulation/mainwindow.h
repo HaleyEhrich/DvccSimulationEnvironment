@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QFileSystemModel>
+#include <QInputDialog>
 #include <QMainWindow>
 #include <QApplication>
 #include <QMessageBox>
@@ -18,6 +19,7 @@
 #include <QWidget>
 #include <QPen>
 #include <QBrush>
+#include <QTimer>
 #include "dataSet.h"
 #include "ramcheck.h"
 #include "romcheck.h"
@@ -105,6 +107,7 @@ public:
     void paintSignal(QPainter *paint);
     //
     void signalPro(_data*);
+    bool isFileLoad();
 
 
 protected:
@@ -195,7 +198,7 @@ private slots:
 
     void on_FMSaveAs_triggered();
 
-    void openURL(QString);
+    void on_FMpasteFile_triggered();
 
 private:
     Ui::MainWindow *ui;
