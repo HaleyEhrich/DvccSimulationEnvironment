@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1300</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>DVCC</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/logo/imagine/logo.png</normaloff>:/logo/imagine/logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="16,0,5">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="circuit_info_layout">
+      <item>
+       <widget class="QGraphicsView" name="circuit_diagram">
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="micro_code_info_table">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>105</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="autoScroll">
+         <bool>true</bool>
+        </property>
+        <property name="autoScrollMargin">
+         <number>10</number>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="tabKeyNavigation">
+         <bool>true</bool>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="textElideMode">
+         <enum>Qt::ElideMiddle</enum>
+        </property>
+        <property name="verticalScrollMode">
+         <enum>QAbstractItemView::ScrollPerItem</enum>
+        </property>
+        <property name="horizontalScrollMode">
+         <enum>QAbstractItemView::ScrollPerItem</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="cornerButtonEnabled">
+         <bool>true</bool>
+        </property>
+        <property name="columnCount">
+         <number>14</number>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderHighlightSections">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <row>
+         <property name="text">
+          <string>当前微指令</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>下条微指令</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>No</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string extracomment="16进制微代码">Hexc</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>S3-0</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>M</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>CN</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>WE</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>B1-0</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>U5-0</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>From</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>To</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>跳转</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>0000</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>000000</string>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string>0000</string>
+         </property>
+        </item>
+        <item row="0" column="3">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item row="0" column="4">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item row="0" column="6">
+         <property name="text">
+          <string>00</string>
+         </property>
+        </item>
+        <item row="0" column="7">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </item>
+        <item row="0" column="8">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </item>
+        <item row="0" column="9">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </item>
+        <item row="0" column="10">
+         <property name="text">
+          <string>00000</string>
+         </property>
+        </item>
+        <item row="0" column="11">
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item row="0" column="12">
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item row="1" column="0">
+         <property name="text">
+          <string>0000</string>
+         </property>
+        </item>
+        <item row="1" column="1">
+         <property name="text">
+          <string>000000</string>
+         </property>
+        </item>
+        <item row="1" column="2">
+         <property name="text">
+          <string>0000</string>
+         </property>
+        </item>
+        <item row="1" column="3">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item row="1" column="4">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item row="1" column="6">
+         <property name="text">
+          <string>00</string>
+         </property>
+        </item>
+        <item row="1" column="7">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </item>
+        <item row="1" column="8">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </item>
+        <item row="1" column="9">
+         <property name="text">
+          <string>000</string>
+         </property>
+        </item>
+        <item row="1" column="10">
+         <property name="text">
+          <string>00000</string>
+         </property>
+        </item>
+        <item row="1" column="11">
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item row="1" column="12">
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="Line" name="left_right_line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QWidget" name="control_widget" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>350</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>1</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTabWidget" name="tw_quick_set">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="elideMode">
+          <enum>Qt::ElideNone</enum>
+         </property>
+         <property name="usesScrollButtons">
+          <bool>true</bool>
+         </property>
+         <property name="tabsClosable">
+          <bool>false</bool>
+         </property>
+         <property name="movable">
+          <bool>false</bool>
+         </property>
+         <property name="tabBarAutoHide">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="tw_quick_set_btn_groups">
+          <attribute name="icon">
+           <iconset>
+            <normaloff>:/tb/icon/tbicon/set-up-dot.png</normaloff>:/tb/icon/tbicon/set-up-dot.png</iconset>
+          </attribute>
+          <attribute name="title">
+           <string>快捷按钮</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="7" column="1">
+            <widget class="QPushButton" name="qs_cmd_run_step_btn">
+             <property name="text">
+              <string>单步(指令)</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource/imagine_res/icon/icon.qrc">
+               <normaloff>:/icon/run.svg</normaloff>:/icon/run.svg</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1" colspan="2">
+            <widget class="QGroupBox" name="qs_load_preset_group">
+             <property name="title">
+              <string>载入预设</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="7,3">
+              <property name="spacing">
+               <number>2</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <widget class="QComboBox" name="qs_preset_combobox"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="qs_load_preset_btn">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>载入</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resource/imagine_res/icon/icon.qrc">
+                  <normaloff>:/icon/load_preset (2).svg</normaloff>:/icon/load_preset (2).svg</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="6" column="1" colspan="2">
+            <widget class="QPushButton" name="qs_clear_pc_btn">
+             <property name="text">
+              <string>总清</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1" colspan="2">
+            <widget class="QGroupBox" name="qs_auto_run_set_btn_group">
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="1">
+               <widget class="QPushButton" name="qs_stop_run_btn">
+                <property name="text">
+                 <string>停止</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resource/imagine_res/icon/icon.qrc">
+                  <normaloff>:/icon/stop.svg</normaloff>:/icon/stop.svg</iconset>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QPushButton" name="qs_pause_run_btn">
+                <property name="text">
+                 <string>暂停</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resource/imagine_res/icon/icon.qrc">
+                  <normaloff>:/icon/pause.svg</normaloff>:/icon/pause.svg</iconset>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <widget class="QSlider" name="interval_time_slider">
+                <property name="minimum">
+                 <number>100</number>
+                </property>
+                <property name="maximum">
+                 <number>5000</number>
+                </property>
+                <property name="singleStep">
+                 <number>100</number>
+                </property>
+                <property name="value">
+                 <number>1000</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="mc_interval_time_tip_lab">
+                <property name="text">
+                 <string>微指令间隔时间:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="mc_interval_time_lab">
+                <property name="text">
+                 <string>1000 (ms)</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="QPushButton" name="qs_micro_run_step_btn">
+             <property name="text">
+              <string>单步(微指令）</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="qs_save_file_btn">
+             <property name="text">
+              <string>保存文件</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource/imagine_res/icon/icon.qrc">
+               <normaloff>:/icon/save.png</normaloff>:/icon/save.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1" colspan="2">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="qs_open_file_btn">
+             <property name="text">
+              <string>打开文件</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource/imagine_res/icon/icon.qrc">
+               <normaloff>:/icon/open_file.svg</normaloff>:/icon/open_file.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="qs_micro_code_info_btn">
+             <property name="text">
+              <string>代码信息</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource/imagine_res/icon/icon.qrc">
+               <normaloff>:/icon/info_table.svg</normaloff>:/icon/info_table.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="qs_run_set_btn">
+             <property name="text">
+              <string>运行设置</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource/imagine_res/icon/icon.qrc">
+               <normaloff>:/icon/run_setting.svg</normaloff>:/icon/run_setting.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tw_signal_btn_groups">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <attribute name="icon">
+           <iconset>
+            <normaloff>:/tb/icon/tbicon/dengji.png</normaloff>:/tb/icon/tbicon/dengji.png</iconset>
+          </attribute>
+          <attribute name="title">
+           <string>手动信号</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="3" column="0">
+            <widget class="QPushButton" name="sig_lddr1_btn">
+             <property name="text">
+              <string>LDDR1</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="sig_ldar_btn">
+             <property name="text">
+              <string>LDAR</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QPushButton" name="sig_ce_btn">
+             <property name="text">
+              <string>CE</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QPushButton" name="sig_pcb_btn">
+             <property name="text">
+              <string>PCB</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="sig_lddr2_btn">
+             <property name="text">
+              <string>LDDR2</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QPushButton" name="sig_swb_btn">
+             <property name="text">
+              <string>SWB</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QPushButton" name="sig_ldpc_btn">
+             <property name="text">
+              <string>LDPC</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QPushButton" name="sig_ar_btn">
+             <property name="text">
+              <string>AR</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="sig_ldad_btn">
+             <property name="text">
+              <string>LDAD(LEDB)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QPushButton" name="sig_alub_btn">
+             <property name="text">
+              <string>ALUB</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QPushButton" name="sig_299b_btn">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>299B</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+             <property name="default">
+              <bool>false</bool>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QPushButton" name="sig_we">
+             <property name="text">
+              <string>WE</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="sig_clear_pc_btn">
+             <property name="text">
+              <string>总清</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="sig_t4_plus_btn">
+             <property name="text">
+              <string>手动脉冲</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="auto_swac_ck_group">
+         <item>
+          <widget class="QCheckBox" name="auto_run_ck">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Auto Run</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/imagine_res/icon/icon.qrc">
+             <normaloff>:/icon/auto_run.png</normaloff>:/icon/auto_run.png</iconset>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="swc_ck">
+           <property name="text">
+            <string>SWC</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="swa_ck">
+           <property name="text">
+            <string>SWA</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="input_box">
+         <property name="title">
+          <string>数据输入区域</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="bottomMargin">
+           <number>9</number>
+          </property>
+          <item>
+           <widget class="QGroupBox" name="micro_start_set_box">
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="micro_start_set_label">
+               <property name="text">
+                <string>微指令开始地址</string>
+               </property>
+               <property name="buddy">
+                <cstring>micro_start_set_box</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="micro_start_spb">
+               <property name="wrapping">
+                <bool>false</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buttonSymbols">
+                <enum>QAbstractSpinBox::UpDownArrows</enum>
+               </property>
+               <property name="specialValueText">
+                <string/>
+               </property>
+               <property name="suffix">
+                <string> (H)</string>
+               </property>
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="value">
+                <number>2</number>
+               </property>
+               <property name="displayIntegerBase">
+                <number>16</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="switch_input_box">
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="switch_input_label">
+               <property name="text">
+                <string>KD7 - KD0</string>
+               </property>
+               <property name="buddy">
+                <cstring>switch_input_box</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="switch_spb">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="suffix">
+                <string> (B)</string>
+               </property>
+               <property name="maximum">
+                <number>255</number>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+               <property name="displayIntegerBase">
+                <number>2</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="alu_cmd_input_box">
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="alu_cmd_input_label">
+               <property name="text">
+                <string>S3-S0 M CN</string>
+               </property>
+               <property name="buddy">
+                <cstring>alu_cmd_input_box</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="alu_cmd_spb">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="suffix">
+                <string> (B)</string>
+               </property>
+               <property name="maximum">
+                <number>63</number>
+               </property>
+               <property name="value">
+                <number>63</number>
+               </property>
+               <property name="displayIntegerBase">
+                <number>2</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="file_menu_bar">
+    <property name="geometry">
+     <rect>
+      <x>339</x>
+      <y>117</y>
+      <width>154</width>
+      <height>237</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+    <addaction name="fm_new_win"/>
+    <addaction name="separator"/>
+    <addaction name="fm_open_file"/>
+    <addaction name="fm_paste_code"/>
+    <addaction name="separator"/>
+    <addaction name="fm_save_file"/>
+    <addaction name="fm_save_as_file"/>
+    <addaction name="separator"/>
+    <addaction name="fm_checker"/>
+   </widget>
+   <widget class="QMenu" name="pannel_menu_bar">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>工具</string>
+    </property>
+    <widget class="QMenu" name="pm_component_switcher">
+     <property name="title">
+      <string>部件选择</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource/imagine_res/menubar/pm_menu/pm_icon.qrc">
+       <normaloff>:/pm_icon/pm_component_switcher.svg</normaloff>:/pm_icon/pm_component_switcher.svg</iconset>
+     </property>
+     <addaction name="pm_load_ram"/>
+     <addaction name="pm_load_rom"/>
+     <addaction name="pm_load_register"/>
+     <addaction name="pm_load_pc"/>
+     <addaction name="pm_load_299b"/>
+     <addaction name="pm_load_alu"/>
+    </widget>
+    <addaction name="pm_ram_checker"/>
+    <addaction name="pm_rom_checker"/>
+    <addaction name="separator"/>
+    <addaction name="pm_component_switcher"/>
+    <addaction name="separator"/>
+    <addaction name="pm_machine_code_translator"/>
+    <addaction name="pm_designer"/>
+    <addaction name="separator"/>
+    <addaction name="pm_other_pannel"/>
+   </widget>
+   <widget class="QMenu" name="option_menu_bar">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>选项</string>
+    </property>
+    <addaction name="om_default_win_size"/>
+    <addaction name="om_font_set"/>
+    <addaction name="om_style"/>
+    <addaction name="separator"/>
+    <addaction name="om_settings"/>
+   </widget>
+   <widget class="QMenu" name="about_menu_bar">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="am_use_handbook"/>
+    <addaction name="separator"/>
+    <addaction name="am_app_constructer_info"/>
+    <addaction name="am_copyright_info"/>
+    <addaction name="am_app_version_info"/>
+   </widget>
+   <widget class="QMenu" name="run_menu_bar">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>运行</string>
+    </property>
+    <addaction name="rm_run_micro_set"/>
+    <addaction name="separator"/>
+    <addaction name="rm_run_setting"/>
+    <addaction name="separator"/>
+    <addaction name="rm_run_log_file"/>
+    <addaction name="rm_save_run_log"/>
+   </widget>
+   <addaction name="file_menu_bar"/>
+   <addaction name="run_menu_bar"/>
+   <addaction name="pannel_menu_bar"/>
+   <addaction name="option_menu_bar"/>
+   <addaction name="about_menu_bar"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="fm_new_win">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/file_menu/fm_icon.qrc">
+     <normaloff>:/fm_icon/new window.svg</normaloff>:/fm_icon/new window.svg</iconset>
+   </property>
+   <property name="text">
+    <string>开启新页面</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="fm_open_file">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/file_menu/fm_icon.qrc">
+     <normaloff>:/fm_icon/fm_open1.svg</normaloff>:/fm_icon/fm_open1.svg</iconset>
+   </property>
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="fm_paste_code">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/file_menu/fm_icon.qrc">
+     <normaloff>:/fm_icon/fm_paste_file.png</normaloff>:/fm_icon/fm_paste_file.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制代码</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="fm_save_file">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/file_menu/fm_icon.qrc">
+     <normaloff>:/fm_icon/fm_save.png</normaloff>:/fm_icon/fm_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="fm_save_as_file">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/file_menu/fm_icon.qrc">
+     <normaloff>:/fm_icon/fm_save_as2.svg</normaloff>:/fm_icon/fm_save_as2.svg</iconset>
+   </property>
+   <property name="text">
+    <string>另存文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="fm_checker">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/file_menu/fm_icon.qrc">
+     <normaloff>:/fm_icon/fm_checker.svg</normaloff>:/fm_icon/fm_checker.svg</iconset>
+   </property>
+   <property name="text">
+    <string>查看器</string>
+   </property>
+  </action>
+  <action name="om_settings">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/om_menu/om_icon.qrc">
+     <normaloff>:/om_icon/om_settings.svg</normaloff>:/om_icon/om_settings.svg</iconset>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </action>
+  <action name="pm_ram_checker">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/pm_menu/pm_icon.qrc">
+     <normaloff>:/pm_icon/pm_ram .png</normaloff>:/pm_icon/pm_ram .png</iconset>
+   </property>
+   <property name="text">
+    <string>RAM查看</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
+  </action>
+  <action name="pm_rom_checker">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/pm_menu/pm_icon.qrc">
+     <normaloff>:/pm_icon/pm_rom.png</normaloff>:/pm_icon/pm_rom.png</iconset>
+   </property>
+   <property name="text">
+    <string>ROM查看</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="pm_other_pannel">
+   <property name="text">
+    <string>其他面板</string>
+   </property>
+  </action>
+  <action name="pm_editor">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/pm_menu/pm_icon.qrc">
+     <normaloff>:/pm_icon/pm_editor.svg</normaloff>:/pm_icon/pm_editor.svg</iconset>
+   </property>
+   <property name="text">
+    <string>编辑器</string>
+   </property>
+  </action>
+  <action name="om_default_win_size">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/om_menu/om_icon.qrc">
+     <normaloff>:/om_icon/om_default_win_size.png</normaloff>:/om_icon/om_default_win_size.png</iconset>
+   </property>
+   <property name="text">
+    <string>恢复默认窗口大小</string>
+   </property>
+  </action>
+  <action name="om_style">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/om_menu/om_icon.qrc">
+     <normaloff>:/om_icon/om_theme.svg</normaloff>:/om_icon/om_theme.svg</iconset>
+   </property>
+   <property name="text">
+    <string>主题设置</string>
+   </property>
+  </action>
+  <action name="om_font_set">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/om_menu/om_icon.qrc">
+     <normaloff>:/om_icon/om_font.svg</normaloff>:/om_icon/om_font.svg</iconset>
+   </property>
+   <property name="text">
+    <string>字体设置</string>
+   </property>
+  </action>
+  <action name="am_use_handbook">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/am_menu/am_icon.qrc">
+     <normaloff>:/am_icon/am_help_doc.svg</normaloff>:/am_icon/am_help_doc.svg</iconset>
+   </property>
+   <property name="text">
+    <string>使用说明</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+H</string>
+   </property>
+  </action>
+  <action name="am_app_constructer_info">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/am_menu/am_icon.qrc">
+     <normaloff>:/am_icon/am_make_info.svg</normaloff>:/am_icon/am_make_info.svg</iconset>
+   </property>
+   <property name="text">
+    <string>制作信息</string>
+   </property>
+  </action>
+  <action name="am_app_version_info">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/am/version.png</normaloff>:/am/version.png</iconset>
+   </property>
+   <property name="text">
+    <string>版本信息</string>
+   </property>
+  </action>
+  <action name="am_copyright_info">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/am_menu/am_icon.qrc">
+     <normaloff>:/am_icon/am_copyright.svg</normaloff>:/am_icon/am_copyright.svg</iconset>
+   </property>
+   <property name="text">
+    <string>版权信息</string>
+   </property>
+  </action>
+  <action name="pm_machine_code_translator">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/pm_menu/pm_icon.qrc">
+     <normaloff>:/pm_icon/pm_code_trans_formate.svg</normaloff>:/pm_icon/pm_code_trans_formate.svg</iconset>
+   </property>
+   <property name="text">
+    <string>微指令转码器</string>
+   </property>
+  </action>
+  <action name="pm_designer">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/pm_menu/pm_icon.qrc">
+     <normaloff>:/pm_icon/pm_design.svg</normaloff>:/pm_icon/pm_design.svg</iconset>
+   </property>
+   <property name="text">
+    <string>设计器</string>
+   </property>
+  </action>
+  <action name="rm_run_setting">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/rm_menu/rm_icon.qrc">
+     <normaloff>:/rm_icon/rm_run_setting.svg</normaloff>:/rm_icon/rm_run_setting.svg</iconset>
+   </property>
+   <property name="text">
+    <string>运行设置</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+R</string>
+   </property>
+  </action>
+  <action name="rm_run_log_file">
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/rm_menu/rm_icon.qrc">
+     <normaloff>:/rm_icon/rm_log_file.svg</normaloff>:/rm_icon/rm_log_file.svg</iconset>
+   </property>
+   <property name="text">
+    <string>运行日志</string>
+   </property>
+  </action>
+  <action name="rm_save_run_log">
+   <property name="text">
+    <string>保存运行日志</string>
+   </property>
+  </action>
+  <action name="rm_run_micro_set">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource/imagine_res/menubar/rm_menu/rm_icon.qrc">
+     <normaloff>:/rm_icon/rm_info_table_1.svg</normaloff>:/rm_icon/rm_info_table_1.svg</iconset>
+   </property>
+   <property name="text">
+    <string>微代码信息框</string>
+   </property>
+  </action>
+  <action name="pm_load_ram">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>RAM</string>
+   </property>
+  </action>
+  <action name="pm_load_rom">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ROM-Control</string>
+   </property>
+  </action>
+  <action name="pm_load_299b">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>299B</string>
+   </property>
+  </action>
+  <action name="pm_load_alu">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ALU</string>
+   </property>
+  </action>
+  <action name="pm_load_register">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </action>
+  <action name="pm_load_pc">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>PC</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resource/imagine_res/menubar/om_menu/om_icon.qrc"/>
+  <include location="resource/imagine_res/menubar/pm_menu/pm_icon.qrc"/>
+  <include location="resource/imagine_res/menubar/file_menu/fm_icon.qrc"/>
+  <include location="resource/imagine_res/menubar/am_menu/am_icon.qrc"/>
+  <include location="resource/imagine_res/menubar/rm_menu/rm_icon.qrc"/>
+  <include location="resource/imagine_res/icon/icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

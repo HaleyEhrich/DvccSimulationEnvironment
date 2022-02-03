@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/pm_icon">
+        <file>pm_code_trans_formate.svg</file>
+        <file>pm_component_switcher.svg</file>
+        <file>pm_design.svg</file>
+        <file>pm_editor.svg</file>
+        <file>pm_ram .png</file>
+        <file>pm_rom.png</file>
+    </qresource>
+</RCC>

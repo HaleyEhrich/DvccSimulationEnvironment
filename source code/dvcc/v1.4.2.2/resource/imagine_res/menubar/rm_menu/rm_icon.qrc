@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/rm_icon">
+        <file>rm_debug.svg</file>
+        <file>rm_info_table.svg</file>
+        <file>rm_log_file.svg</file>
+        <file>rm_run_setting.svg</file>
+        <file>rm_info_table_1.svg</file>
+        <file>rm_info_table_2.svg</file>
+    </qresource>
+</RCC>

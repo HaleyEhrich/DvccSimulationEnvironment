@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/win_img">
+        <file>exe_logo.ico</file>
+        <file>logo.png</file>
+        <file>mainWinIcon.png</file>
+        <file>ramCheckPannelIcon.png</file>
+        <file>romCheckPannelIcon.png</file>
+        <file>trans_format.png</file>
+    </qresource>
+</RCC>

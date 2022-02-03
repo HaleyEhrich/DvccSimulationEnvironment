@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>auto_run.png</file>
+        <file>faq.svg</file>
+        <file>info_table.svg</file>
+        <file>load_preset (2).svg</file>
+        <file>load_preset.svg</file>
+        <file>open_file.svg</file>
+        <file>openfile.png</file>
+        <file>rizhi.png</file>
+        <file>run_setting.svg</file>
+        <file>save.png</file>
+        <file>set-up-dot.png</file>
+        <file>electronics.svg</file>
+        <file>pause.svg</file>
+        <file>play.svg</file>
+        <file>logo-github.svg</file>
+        <file>right.svg</file>
+        <file>left.svg</file>
+        <file>run.svg</file>
+        <file>stop.svg</file>
+    </qresource>
+</RCC>
