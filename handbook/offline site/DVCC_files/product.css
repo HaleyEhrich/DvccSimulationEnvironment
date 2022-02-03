@@ -1,0 +1,371 @@
+@font-face {
+    font-family: "EDIX";
+    src: url(../resource/font/EDIX.ttf);
+}
+@font-face {
+    font-family: "EDMorganite-BookIX";
+    src: url(../resource/font/Morganite-Book.ttf);
+}
+
+@font-face {
+    font-family: "HarmonyOS_Sans_Regular";
+    src: url(../resource/font/HarmonyOS_Sans_Naskh_Arabic_Regular.ttf);
+}
+
+/* Main body css set */
+html {
+    background-color: white;
+}
+
+/* Header css set：Header contained website name slogan scroll tip*/
+header {
+    background-color: #7cffcb;
+    background-image: linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
+
+    margin: 0px;
+
+    padding: 0px;
+}
+
+.page_header_con {
+    align-items: center;
+
+    background-color: #7cffcb;
+    background-image: linear-gradient(315deg, #155996 0%, #158b64 74%);
+
+    display: flex;
+
+    flex-direction: column;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    justify-content: center;
+
+    height: 45vh;
+
+    position: relative;
+
+    width: 100%;
+}
+
+.page_header_main_title {
+    color: #ffffff;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    margin: 0px;
+}
+
+.page_header_sub_title {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 18px;
+
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.page_header_btn_con {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.page_header_btn {
+    color: rgba(255, 255, 255, 0.7);
+
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+
+    display: inline-block;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+    width: 150px;
+}
+
+.page_header_btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Body css set */
+body {
+    font-family: "Open Sans", "HarmonyOS_Sans_Regular", Helvetica, Arial, sans-serif;
+    margin: 0px 0px;
+}
+
+/* Passage nav css set */
+.art_nav_con {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    width: 100%;
+
+    /* background-color: red; */
+}
+
+.art_nav_title {
+    font-family: inherit;
+    font-size: 35px;
+    font-weight: bold;
+
+    margin: 0px;
+
+    padding-top: 10px;
+    padding-left: 20px;
+    /* background-color: lavender; */
+}
+
+.art_nav_con ul {
+    margin: 0px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    /* background-color: khaki; */
+}
+
+.art_nav_con ul li {
+    list-style: none;
+    margin-left: 0px;
+}
+
+.nav_link_item {
+    color: black;
+
+    font-family: inherit;
+    font-size: 20px;
+    padding-left: 5%;
+
+    text-decoration: none;
+}
+
+.nav_link_item_1 {
+    color: black;
+    font-family: inherit;
+    font-size: 20px;
+    padding-left: 5%;
+    text-decoration: none;
+}
+
+.nav_link_item_2 {
+    color: black;
+
+    font-family: inherit;
+    font-size: 20px;
+
+    padding-left: 7%;
+
+    text-decoration: none;
+}
+
+.nav_link_item_3 {
+    color: black;
+
+    font-family: inherit;
+    font-size: 20px;
+
+    padding-left: 10%;
+
+    text-decoration: none;
+}
+
+.nav_link_item:hover,
+.nav_link_item:visited,
+.nav_link_item_1:hover,
+.nav_link_item_1:visited,
+.nav_link_item_2:hover,
+.nav_link_item_2:visited,
+.nav_link_item_3:hover,
+.nav_link_item_3:visited {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: underline rgba(0, 0, 0, 0.7) 2px;
+}
+
+/* Passage container css set */
+.article_con {
+    font-family: inherit;
+}
+
+.divi_line {
+    border-bottom: #dfdedcb4 solid 2px;
+    line-height: 2px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.h1 {
+    color: rgba(0, 0, 0, 1);
+
+    font-family: inherit;
+    font-size: 35px;
+    font-weight: bold;
+
+    margin: 0px;
+    margin-left: 2%;
+    margin-top: 10px;
+}
+
+.h2 {
+    color: rgba(0, 0, 0, 0.7);
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+
+    margin: 0px;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+
+.h3 {
+    color: rgba(0, 0, 0, 0.5);
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: normal;
+
+    margin: 0px;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+
+.quote {
+    background-color: #fafbfc;
+    border-left: #e8e8e6 solid 5px;
+
+    color: rgba(0, 0, 0, 1);
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: normal;
+
+    margin: 0px;
+    margin-left: 5%;
+
+    padding: 5px 5px;
+
+    width: 100%;
+}
+
+.link {
+    color: #4169e1;
+
+    font-style: italic;
+
+    margin: 0px;
+    margin-left: 5%;
+
+    text-decoration: none;
+}
+
+.note {
+    font-family: inherit;
+    font-size: 8px;
+    font-weight: lighter;
+    font-style: italic;
+
+    margin: 0px;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+.para,
+.article_con p {
+    font-family: inherit;
+    font-size: 20px;
+
+    margin-top: 2%;
+
+    margin: 0px;
+    margin-left: 5%;
+
+    text-indent: 20px;
+}
+
+.para::first-letter {
+    font-size: 35px;
+    font-weight: bold;
+
+    text-transform: Capitalize;
+}
+
+.img_con {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    padding: 0px 0px;
+    width: 90%;
+}
+
+.img_con .img {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 45%;
+    object-fit: cover;
+    justify-content: center;
+}
+
+.img {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 95%;
+    object-fit: cover;
+    justify-content: center;
+}
+
+/* Footer css set */
+footer {
+    background-color: #f7f7f7;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer a {
+    color: black;
+    font-family: "HarmonyOS Sans Regular", sans-serif, serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: underline rgba(0, 0, 0, 0.5) 2px;
+}
