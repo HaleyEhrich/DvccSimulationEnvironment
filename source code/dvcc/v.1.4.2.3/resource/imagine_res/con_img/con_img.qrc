@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/con_img">
+        <file>arrow_down.svg</file>
+        <file>arrow_up.svg</file>
+        <file>radio_checked.svg</file>
+    </qresource>
+</RCC>

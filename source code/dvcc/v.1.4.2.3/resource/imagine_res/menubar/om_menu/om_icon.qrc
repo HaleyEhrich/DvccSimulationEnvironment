@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/om_icon">
+        <file>om_default_win_size.png</file>
+        <file>om_font.svg</file>
+        <file>om_settings.svg</file>
+        <file>om_theme.svg</file>
+    </qresource>
+</RCC>

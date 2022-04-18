@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/am_icon">
+        <file>am_copyright.svg</file>
+        <file>am_help_doc.svg</file>
+        <file>am_make_info.svg</file>
+    </qresource>
+</RCC>

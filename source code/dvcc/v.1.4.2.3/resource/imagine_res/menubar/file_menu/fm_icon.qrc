@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/fm_icon">
+        <file>fm_checker.svg</file>
+        <file>fm_open.svg</file>
+        <file>fm_open1.svg</file>
+        <file>fm_open3.svg</file>
+        <file>fm_save_as.svg</file>
+        <file>fm_save_as2.svg</file>
+        <file>new window.svg</file>
+        <file>fm_paste_file.png</file>
+        <file>fm_save.png</file>
+    </qresource>
+</RCC>
